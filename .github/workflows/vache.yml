@@ -1,0 +1,22 @@
+name: Cow ASCII Art Workflow
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: test
+      run: |
+        cowsay Hello
+
+    - name: Create ASCII Art File
+      run: |
+        cowsay -f snowman "C'est le commit numéro : ${{ github.sha }}" > /home/samet/cow.txt

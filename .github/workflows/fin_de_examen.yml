@@ -1,0 +1,14 @@
+name: Fin de l'examen Workflow
+
+on:
+  schedule:
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+    - name: Display message with cowsay
+      run: cowsay "Fin de l'examen"
